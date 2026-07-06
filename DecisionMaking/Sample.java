@@ -6,7 +6,7 @@ public class Sample {
         // JAVA PRIMITIVE DATA TYPES
         // =====================================================
 
-        byte age = 20;                    // Stores whole numbers (-128 to 127)
+        byte age = 20;                    // Stores whole numbers (-128 to 127).
         short year = 2025;                // Stores larger whole numbers
         int marks = 95;                   // Most commonly used integer type
         long population = 8000000000L;    // 'L' indicates long value
