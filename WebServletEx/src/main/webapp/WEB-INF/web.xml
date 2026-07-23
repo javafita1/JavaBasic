@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee"
+         xmlns:xsi="http://w3.org"
+         xsi:schemaLocation="https://jakarta.ee/web-app_6_0.xsd" 
+           version="6.0">
+           
+<!-- Servlet context values are global for entire application -->
+<context-param>
+    <param-name>college</param-name>
+    <param-value>ABC Engineering College</param-value>
+</context-param>
+
+<context-param>
+    <param-name>city</param-name>
+    <param-value>Chennai</param-value>
+</context-param>
+
+
+ <servlet>
+        <servlet-name>SampleServlet</servlet-name>
+        <servlet-class>SampleServlet</servlet-class>
+        
+        <!-- Servlet config values are seprate for each servlet -->
+        <init-param>
+            <param-name>teacher</param-name>
+            <param-value>Geetha</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>studentCount</param-name>
+            <param-value>50</param-value>
+        </init-param>
+        
+         <load-on-startup>2</load-on-startup>
+    </servlet>
+    
+    <!-- Servlet name must be unique for each servlet -->
+    <servlet>
+        <servlet-name>DemoServlet</servlet-name>
+        <servlet-class>DemoServlet</servlet-class>
+        
+        <load-on-startup>1</load-on-startup>
+        
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>SampleServlet</servlet-name>
+        <url-pattern>/sample</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>DemoServlet</servlet-name>
+        <url-pattern>/demo</url-pattern>
+    </servlet-mapping>
+    
+<welcome-file-list>
+<welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+
+
+<error-page>
+    <error-code>404</error-code>
+    <location>/404.html</location>
+</error-page>
+
+</web-app>
